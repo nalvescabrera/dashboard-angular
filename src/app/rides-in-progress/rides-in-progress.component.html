@@ -14,6 +14,7 @@
                 <th>UserID</th>
                 <th>PlayerID</th>
                 <th>PlayerRideID</th>
+                <th>Options</th>
             </tr>
  
             <!-- Use *ngFor directive to loop throught our list of products. -->
@@ -21,6 +22,11 @@
                 <td>{{ride.user_id}}</td>
                 <td>{{ride.player_id}}</td>
                 <td>{{ride.player_ride_id}}</td>
+                <td>
+                        <a (click)="readOneRide(ride.id)" class='btn btn-primary m-r-5px'>
+                            <span class='glyphicon glyphicon-eye-open'></span> Detail
+                        </a>
+                </td>
             </tr>
         </table>
     </div>

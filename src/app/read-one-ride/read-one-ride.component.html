@@ -1,0 +1,43 @@
+<div class="row m-b-18px">
+  <!-- <div class="col-md-12">
+      <a (click)="readRide()" class='btn btn-primary pull-right'>
+          <span class='glyphicon glyphicon-list'></span> Read Rides
+      </a>
+  </div> -->
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+      <!-- HTML table for displaying a product details -->
+      <table class='table table-hover table-responsive table-bordered'>
+
+          <tr>
+              <td class="w-40-pct">RideId</td>
+              <td>{{ride?.id}}</td>
+          </tr>
+
+          <tr>
+              <td>UserID</td>
+              <td>{{ride?.user_id}}</td>
+          </tr>
+
+          <tr>
+              <td>PlayerID</td>
+              <td>{{ride?.player_id}}</td>
+          </tr>
+
+          <tr>
+              <td>PlayerRideID</td>
+              <td>{{ride?.player_ride_id}}</td>
+          </tr>
+          <tr>
+            <td>InProgress</td>
+            <td>{{ride?.in_progress}}</td>
+        </tr>
+        <tr>
+          <td>InProgress</td>
+          <td>{{ride?.in_progress}}</td>
+      </tr>
+      </table>
+  </div>
+</div>

@@ -1,17 +1,23 @@
-<div class="container">
- 
-    <!-- show page header -->
-    <div class="row">
-        <div class="col-md-12">
-            <div class='page-header'><h1>{{title}}</h1></div>
+    <div class="container">
+    
+        <!-- show page header -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class='page-header'><h1>{{title}}</h1></div>
+            </div>
         </div>
+    
+        <app-rides-in-progress
+            *ngIf="show_rides_html"
+            (show_read_one_ride_event)="showReadOneRide($event)">
+        </app-rides-in-progress>
+    
+
+            <app-read-one-ride
+            *ngIf="show_read_one_ride_html"
+            [ride_id]="ride_id">
+           </app-read-one-ride>
+        
     </div>
- 
-    <!-- Show this view if "show_read_products_html" property of AppComponent is true. -->
-    <app-rides-in-progress
-        *ngIf="show_rides_html">
-    </app-rides-in-progress>
- 
-</div>
-<!-- /container -->
+    <!-- /container -->
 

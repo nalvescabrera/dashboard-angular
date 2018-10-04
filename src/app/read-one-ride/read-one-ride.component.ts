@@ -16,6 +16,8 @@ import { Component, OnChanges} from '@angular/core';
    @Output() show_read_rides_event = new EventEmitter();
 //    @Output() show_read_one_ride_event=new EventEmitter();
 
+    @Output() show_create_player_event=new EventEmitter();
+
     // @Input means it will accept value from parent component (AppComponent)
     @Input() ride_id;
 
@@ -30,11 +32,18 @@ import { Component, OnChanges} from '@angular/core';
         this.show_read_rides_event.emit({ title: "Read Rides" });
     }
 
+    createPlayer(){
+        this.show_create_player_event.emit({
+            title: "Create Player"
+        });
+    }
+
     ngOnChanges(){
         console.log(this.ride_id);
         this.rideService.readOneRide(this.ride_id)
             .subscribe(ride => this.ride=ride);
     }
+
   }
   
 

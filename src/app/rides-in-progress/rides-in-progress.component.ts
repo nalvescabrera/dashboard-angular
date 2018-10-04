@@ -12,6 +12,7 @@ import { Ride } from '../ride';
 
 export class RidesInProgressComponent implements OnInit {
   @Output() show_read_one_ride_event=new EventEmitter();
+  @Output() show_create_player_event=new EventEmitter();
 
 
   rides: Ride[];
@@ -31,5 +32,12 @@ export class RidesInProgressComponent implements OnInit {
             .subscribe(rides =>
                 this.rides=rides
             );
+  }
+
+  createPlayer(){
+
+    this.show_create_player_event.emit({
+      title: "Create Player"
+    });
   }
 }

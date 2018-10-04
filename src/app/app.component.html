@@ -13,10 +13,18 @@
         </app-rides-in-progress>
     
 
-            <app-read-one-ride
+         <app-read-one-ride
             *ngIf="show_read_one_ride_html"
+            (show_create_player_event)="showCreatePlayer($event)">
             [ride_id]="ride_id">
-           </app-read-one-ride>
+        </app-read-one-ride>
+   
+        <app-create-player
+        *ngIf="show_create_player_html"
+        (show_read_player_event)="showReadPlayer($event)">
+        </app-create-player>
+
+        
         
     </div>
     <!-- /container -->

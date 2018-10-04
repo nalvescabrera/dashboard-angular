@@ -4,6 +4,7 @@ import { Observable} from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Ride } from './ride';
 import { map } from 'rxjs/operators';
+import { Category } from './category';
 
 
 @Injectable({
@@ -26,4 +27,17 @@ export class RidesProgressService {
         .get("http://localhost:3000/api/ride/" + ride_id)
         .pipe(map((res: Response) => res.json()));
   }
+
+
+  createPlayer(player): Observable<Category>{
+  
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+
+   return this._http.post(
+        "http://localhost:3000/api/player/create/",
+        player,
+       options
+    ).pipe(map((res: Response) => res.json()));
+    }
 }
